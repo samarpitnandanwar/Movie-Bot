@@ -12,7 +12,7 @@
     {
         "name": "Stranger Things",
         "type": "webseries",
-        "thumbnail": "https://example.com/stranger.jpg",
+        "thumbnail": "https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/04/stranger-things-cartoon.jpg",
         "episodes": {
             "S01E01": {
                 "480p": "http://example.com/st-101-480p.mp4",
@@ -39,3 +39,4 @@
         }
     }
 ]
+
