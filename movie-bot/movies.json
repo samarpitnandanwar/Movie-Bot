@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Avatar",
+    "links": {
+      "480p": "http://example.com/avatar-480p.mp4",
+      "720p": "http://example.com/avatar-720p.mp4",
+      "1080p": "http://example.com/avatar-1080p.mp4"
+    }
+  },
+  {
+    "name": "",
+    "links": {}
+  }
+]
