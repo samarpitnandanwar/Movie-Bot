@@ -10,6 +10,16 @@
         }
     },
     {
+        "name": "Aap Jaisa Koi",
+        "type": "movie",
+        "thumbnail": "https://example.com/avatar.jpg",
+        "links": {
+            "480p": "http://example.com/avatar-480p.mp4",
+            "720p": "http://example.com/avatar-720p.mp4",
+            "1080p": "http://example.com/avatar-1080p.mp4"
+        }
+    },
+    {
         "name": "Stranger Things",
         "type": "webseries",
         "thumbnail": "https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/04/stranger-things-cartoon.jpg",
@@ -39,6 +49,7 @@
         }
     }
 ]
+
 
 
 
