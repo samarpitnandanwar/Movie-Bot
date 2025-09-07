@@ -39,8 +39,32 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "Send me a *movie/series/anime* name to get links.\n\n"
         "👉 Admin commands:\n"
         "   /addmovie, /addseries, /updateitem, /deleteitem\n"
-        "   /add_ads, /remove_ads"
+        "   /add_ads, /remove_ads\n"
+        "👉 User command:\n"
+        "   /list (see all available movies & series)"
     )
+
+async def list_items(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not data:
+        await update.message.reply_text("⚠️ No movies or series added yet.")
+        return
+
+    movies = [item["name"] for item in data if item["type"] == "movie"]
+    series = [item["name"] for item in data if item["type"] != "movie"]
+
+    msg = "📋 *Available Library:*\n\n"
+    if movies:
+        msg += "🎥 *Movies:*\n"
+        for m in movies:
+            msg += f"   • {m}\n"
+        msg += "\n"
+    if series:
+        msg += "📺 *Series/Anime/TV Shows:*\n"
+        for s in series:
+            msg += f"   • {s}\n"
+        msg += "\n"
+
+    await update.message.reply_text(msg, parse_mode="Markdown")
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.message.text.strip()
@@ -253,6 +277,7 @@ def main():
 
     # Command handlers
     app.add_handler(CommandHandler("start", start))
+    app.add_handler(CommandHandler("list", list_items))   # 👈 NEW
     app.add_handler(CommandHandler("addmovie", addmovie))
     app.add_handler(CommandHandler("addseries", addseries))
     app.add_handler(CommandHandler("updateitem", updateitem))
