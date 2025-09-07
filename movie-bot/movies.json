@@ -12,11 +12,11 @@
     {
         "name": "Aap Jaisa Koi",
         "type": "movie",
-        "thumbnail": "https://example.com/avatar.jpg",
+        "thumbnail": "https://wp-socialnation-assets.s3.ap-south-1.amazonaws.com/wp-content/uploads/2025/06/27183016/5474412.jpg",
         "links": {
-            "480p": "http://example.com/avatar-480p.mp4",
-            "720p": "http://example.com/avatar-720p.mp4",
-            "1080p": "http://example.com/avatar-1080p.mp4"
+            "480p": "https://vcloud.lol/xnr30iovir7s0yr",
+            "720p": "https://vcloud.lol/gf-tftgahaay0ag",
+            "1080p": "https://vcloud.lol/rb261-lms8yvzyq"
         }
     },
     {
@@ -49,6 +49,7 @@
         }
     }
 ]
+
 
 
 
