@@ -46,19 +46,25 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if item["type"] == "movie":
         text = f"🎥 *{item['name']}* (Movie)\n\n"
-        for quality, link in item["links"].items():
+        for quality, link in item.get("links", {}).items():
             text += f"🔗 {quality}: {link}\n"
 
     else:
         text = f"📺 *{item['name']}* ({item['type'].capitalize()})\n\n"
-        for ep, links in item["episodes"].items():
+        for ep, links in item.get("episodes", {}).items():
             text += f"▶️ {ep}\n"
             for quality, link in links.items():
                 text += f"   🔗 {quality}: {link}\n"
             text += "\n"
 
+    # Try sending thumbnail, fallback to text if fails
     if "thumbnail" in item and item["thumbnail"]:
-        await update.message.reply_photo(photo=item["thumbnail"], caption=text, parse_mode="Markdown")
+        try:
+            await update.message.reply_photo(
+                photo=item["thumbnail"], caption=text, parse_mode="Markdown"
+            )
+        except Exception as e:
+            await update.message.reply_text(text, parse_mode="Markdown")
     else:
         await update.message.reply_text(text, parse_mode="Markdown")
 
