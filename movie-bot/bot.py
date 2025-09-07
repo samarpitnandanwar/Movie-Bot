@@ -23,7 +23,7 @@ def save_data(file, data):
         json.dump(data, f, indent=2)
 
 data = load_data("movies.json")
-ads_list = load_data("ads.json")  # Stores ads
+ads_list = load_data("ads.json")
 
 # ====== Utility functions ======
 def find_item(name):
@@ -81,6 +81,105 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         await update.message.reply_text(text, parse_mode="Markdown")
 
+# ====== Add movie/series/update ======
+async def addmovie(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if update.message.from_user.id != ADMIN_ID:
+        await update.message.reply_text("❌ Not authorized.")
+        return
+    try:
+        args = " ".join(context.args)
+        parts = args.split("|")
+        name = parts[0].strip()
+        thumbnail = parts[1].strip()
+        links = {q.strip(): l.strip() for p in parts[2:] if "=" in p for q, l in [p.split("=",1)]}
+        new_item = {"name": name, "type": "movie", "thumbnail": thumbnail, "links": links}
+        data.append(new_item)
+        save_data("movies.json", data)
+        await update.message.reply_text(f"✅ Movie *{name}* added!", parse_mode="Markdown")
+    except:
+        await update.message.reply_text("⚠️ Usage:\n/addmovie Name | thumbnail | 480p=link | 720p=link")
+
+async def addseries(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if update.message.from_user.id != ADMIN_ID:
+        await update.message.reply_text("❌ Not authorized.")
+        return
+    try:
+        args = " ".join(context.args)
+        parts = args.split("|")
+        name = parts[0].strip()
+        thumbnail = parts[1].strip()
+        episodes = {}
+        for p in parts[2:]:
+            if ":" in p:
+                ep, qualities = p.split(":", 1)
+                q_links = {q.strip(): l.strip() for ql in qualities.split(",") if "=" in ql for q, l in [ql.split("=",1)]}
+                episodes[ep.strip()] = q_links
+        new_item = {"name": name, "type": "series", "thumbnail": thumbnail, "episodes": episodes}
+        data.append(new_item)
+        save_data("movies.json", data)
+        await update.message.reply_text(f"✅ Series *{name}* added!", parse_mode="Markdown")
+    except:
+        await update.message.reply_text("⚠️ Usage:\n/addseries Name | thumbnail | S01E01:480p=link,720p=link")
+
+async def updateitem(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if update.message.from_user.id != ADMIN_ID:
+        await update.message.reply_text("❌ Not authorized.")
+        return
+    try:
+        args = " ".join(context.args)
+        parts = args.split("|")
+        name = parts[0].strip()
+        item = find_item(name)
+        if not item:
+            await update.message.reply_text(f"❌ Item '{name}' not found.")
+            return
+        item["thumbnail"] = parts[1].strip()
+        if item["type"] == "movie":
+            for p in parts[2:]:
+                if "=" in p:
+                    q,l = p.split("=",1)
+                    item["links"][q.strip()] = l.strip()
+        else:
+            for p in parts[2:]:
+                if ":" in p:
+                    ep, qualities = p.split(":",1)
+                    q_links = {q.strip(): l.strip() for ql in qualities.split(",") if "=" in ql for q,l in [ql.split("=",1)]}
+                    item["episodes"][ep.strip()] = q_links
+        save_data("movies.json", data)
+        await update.message.reply_text(f"✅ Updated *{name}*!", parse_mode="Markdown")
+    except:
+        await update.message.reply_text("⚠️ Usage: /updateitem Name | thumbnail | 480p=newlink | S01E01:480p=newlink,...")
+
+# ====== Delete with confirmation ======
+CONFIRM_DELETE = range(1)
+
+async def deleteitem(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if update.message.from_user.id != ADMIN_ID:
+        await update.message.reply_text("❌ Not authorized.")
+        return
+    name = " ".join(context.args).strip()
+    item = find_item(name)
+    if not item:
+        await update.message.reply_text(f"❌ Item '{name}' not found.")
+        return
+    context.user_data["delete_item"] = item
+    await update.message.reply_text(f"⚠️ Are you sure you want to delete *{item['name']}*? Reply YES to confirm.", parse_mode="Markdown")
+    return CONFIRM_DELETE
+
+async def confirm_delete(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    text = update.message.text.strip().lower()
+    item = context.user_data.get("delete_item")
+    if not item:
+        return ConversationHandler.END
+    if text == "yes":
+        data.remove(item)
+        save_data("movies.json", data)
+        await update.message.reply_text(f"🗑️ Deleted *{item['name']}* successfully!", parse_mode="Markdown")
+    else:
+        await update.message.reply_text("❌ Deletion cancelled.")
+    context.user_data.pop("delete_item", None)
+    return ConversationHandler.END
+
 # ====== Add ads (admin) ======
 async def add_ads(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if update.message.from_user.id != ADMIN_ID:
@@ -124,7 +223,6 @@ async def remove_ads(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not ads_list:
         await update.message.reply_text("⚠️ No ads to remove.")
         return
-    # Show ads with index
     msg = "🗑️ Current Ads:\n"
     for idx, ad in enumerate(ads_list, start=1):
         if ad["type"] == "text":
@@ -149,13 +247,11 @@ async def confirm_remove_ad(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("❌ Please enter a valid number.")
     return ConversationHandler.END
 
-# ====== Movie/Series/Add/Update/Delete commands (unchanged) ======
-# Copy your existing addmovie, addseries, updateitem, deleteitem, confirm_delete here
-
 # ====== Main ======
 def main():
     app = Application.builder().token(TOKEN).build()
 
+    # Command handlers
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("addmovie", addmovie))
     app.add_handler(CommandHandler("addseries", addseries))
@@ -163,19 +259,21 @@ def main():
     app.add_handler(CommandHandler("add_ads", add_ads))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
-    conv_handler_delete = ConversationHandler(
+    # Delete conversation
+    conv_delete = ConversationHandler(
         entry_points=[CommandHandler("deleteitem", deleteitem)],
         states={CONFIRM_DELETE: [MessageHandler(filters.TEXT & ~filters.COMMAND, confirm_delete)]},
         fallbacks=[]
     )
-    app.add_handler(conv_handler_delete)
+    app.add_handler(conv_delete)
 
-    conv_handler_ads = ConversationHandler(
+    # Remove ad conversation
+    conv_remove_ads = ConversationHandler(
         entry_points=[CommandHandler("remove_ads", remove_ads)],
         states={CONFIRM_REMOVE_AD: [MessageHandler(filters.TEXT & ~filters.COMMAND, confirm_remove_ad)]},
         fallbacks=[]
     )
-    app.add_handler(conv_handler_ads)
+    app.add_handler(conv_remove_ads)
 
     print("🤖 Bot is running...")
     app.run_polling()
