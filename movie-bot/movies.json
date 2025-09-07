@@ -1,14 +1,41 @@
 [
-  {
-    "name": "Avatar",
-    "links": {
-      "480p": "http://example.com/avatar-480p.mp4",
-      "720p": "http://example.com/avatar-720p.mp4",
-      "1080p": "http://example.com/avatar-1080p.mp4"
+    {
+        "name": "Avatar",
+        "type": "movie",
+        "thumbnail": "https://example.com/avatar.jpg",
+        "links": {
+            "480p": "http://example.com/avatar-480p.mp4",
+            "720p": "http://example.com/avatar-720p.mp4",
+            "1080p": "http://example.com/avatar-1080p.mp4"
+        }
+    },
+    {
+        "name": "Stranger Things",
+        "type": "webseries",
+        "thumbnail": "https://example.com/stranger.jpg",
+        "episodes": {
+            "S01E01": {
+                "480p": "http://example.com/st-101-480p.mp4",
+                "720p": "http://example.com/st-101-720p.mp4"
+            },
+            "S01E02": {
+                "480p": "http://example.com/st-102-480p.mp4",
+                "720p": "http://example.com/st-102-720p.mp4"
+            }
+        }
+    },
+    {
+        "name": "Naruto",
+        "type": "anime",
+        "thumbnail": "https://example.com/naruto.jpg",
+        "episodes": {
+            "Episode 1": {
+                "480p": "http://example.com/naruto-ep1-480p.mp4",
+                "720p": "http://example.com/naruto-ep1-720p.mp4"
+            },
+            "Episode 2": {
+                "480p": "http://example.com/naruto-ep2-480p.mp4"
+            }
+        }
     }
-  },
-  {
-    "name": "",
-    "links": {}
-  }
 ]
