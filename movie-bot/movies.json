@@ -10,17 +10,6 @@
         }
     },
     {
-        "name": "Raid 2",
-        "type": "movie",
-        "thumbnail": "https://img.nowrunning.com/content/movie/2024/raid-29076/bg-video48202552747.jpg",
-        "links": {
-            "480p": "https://vcloud.lol/qqqoz4opy1gaq01",
-            "720p": "https://vcloud.lol/exm7sbm5ieix1sz",
-            "1080p": "https://vcloud.lol/d1ooqesd6sgevdv",
-            "2K": "https://vcloud.lol/36sdsfhd9_u61an"
-        }
-    },
-    {
         "name": "Stranger Things",
         "type": "webseries",
         "thumbnail": "https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/04/stranger-things-cartoon.jpg",
@@ -50,6 +39,7 @@
         }
     }
 ]
+
 
 
 
