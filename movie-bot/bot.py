@@ -29,6 +29,9 @@ ads_list = load_data("ads.json")
 SUBSCRIBERS_FILE = "subscribers.json"
 subscribers = set(load_data(SUBSCRIBERS_FILE))  # store as set for uniqueness
 
+# ====== Ad rotation index ======
+ad_index = 0
+
 # ====== Utility functions ======
 def find_item(name):
     for item in data:
@@ -99,15 +102,17 @@ async def list_items(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(msg, parse_mode="Markdown")
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    global ad_index
     query = update.message.text.strip()
     item = find_item(query)
     if not item:
         await update.message.reply_text("❌ Not found. Try another name.")
         return
 
-    # ✅ Always display an ad before showing movie/series info
+    # ✅ Always display ad before result, in cycle order
     if ads_list:
-        ad = random.choice(ads_list)
+        ad = ads_list[ad_index % len(ads_list)]
+        ad_index += 1
         if ad["type"] == "text":
             await update.message.reply_text(ad["content"])
         elif ad["type"] == "image":
