@@ -105,8 +105,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("❌ Not found. Try another name.")
         return
 
-    # Display random ad (30% chance)
-    if ads_list and random.random() < 0.3:
+    # ✅ Always display an ad before showing movie/series info
+    if ads_list:
         ad = random.choice(ads_list)
         if ad["type"] == "text":
             await update.message.reply_text(ad["content"])
@@ -372,4 +372,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
