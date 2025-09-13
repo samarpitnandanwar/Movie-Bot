@@ -70,7 +70,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "🎬 Send me a *movie/series/anime* name to get links.\n\n"
         "👉 Admin commands:\n"
         "   /addmovie, /addseries, /updateitem, /deleteitem\n"
-        "   /add_ads, /remove_ads, /broadcast\n"
+        "   /add_ads, /remove_ads, /subscribers, /broadcast\n"
         "👉 User command:\n"
         "   /list (see all available movies & series)",
         parse_mode="Markdown"
@@ -321,6 +321,21 @@ async def broadcast(update: Update, context: ContextTypes.DEFAULT_TYPE):
     except:
         await update.message.reply_text("⚠️ Usage: /broadcast Your message here")
 
+# ====== Subscribers list for admin view ======
+async def show_subscribers(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if update.message.from_user.id != ADMIN_ID:
+        await update.message.reply_text("❌ Not authorized.")
+        return
+    if not subscribers:
+        await update.message.reply_text("⚠️ No subscribers yet.")
+        return
+    
+    subs_list = "\n".join([f"{idx+1}. {uid}" for idx, uid in enumerate(subscribers)])
+    await update.message.reply_text(
+        f"📊 Total Subscribers: {len(subscribers)}\n\n"
+        f"📝 Subscriber IDs:\n{subs_list}"
+    )
+
 # ====== Main ======
 def main():
     app = Application.builder().token(TOKEN).build()
@@ -334,6 +349,7 @@ def main():
     app.add_handler(CommandHandler("add_ads", add_ads))
     app.add_handler(CommandHandler("broadcast", broadcast))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
+    app.add_handler(CommandHandler("subscribers", show_subscribers))
 
     # Delete conversation
     conv_delete = ConversationHandler(
@@ -356,3 +372,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
