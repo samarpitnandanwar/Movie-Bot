@@ -288,5 +288,17 @@
             "720p": "https://vcloud.lol/8b6mp8gsbv84pnu",
             "1080p": "https://vcloud.lol/rapu0uqpssymqts"
         }
+    },
+    {
+        "name": "Demon Slayer: Kimetsu no Yaiba",
+        "type": "anime",
+        "thumbnail": "https://example.com/moneyheist.jpg",
+        "seasons": {
+            "Season 1": "https://vcloud.lol/8rlylufq_ezuqha",
+            "Season 2": "https://vcloud.lol/-aqlyeqaeu012aw",
+            "Season 3": "https://vcloud.lol/p_s1qcjqtt1zmjl",
+            "Season 4": "https://vcloud.lol/lhqxm7lwdmhwb0c"
+        }
     }
 ]
+
