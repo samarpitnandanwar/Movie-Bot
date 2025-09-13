@@ -1,5 +1,5 @@
 [
-        {
+    {
         "name": "Tanhaji: The Unsung Warrior",
         "type": "movie",
         "thumbnail": "https://imgs.search.brave.com/TQKJo5ayDbhqY9boWaX6PuO9Jm1b07gSDOdZwCxYDnA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9taXIt/czMtY2RuLWNmLmJl/aGFuY2UubmV0L3By/b2plY3RzLzQwNC9i/ODhmZGYyMjU0MzQz/MjEuWTNKdmNDdzRN/RGdzTmpNeUxEQXNN/QS5wbmc",
@@ -282,7 +282,7 @@
     {
         "name": "Saiyaara",
         "type": "movie",
-        "thumbnail": "https://rogmovies.org/wp-content/uploads/2025/07/Saiyaara.jpg",
+        "thumbnail": "https://tse1.mm.bing.net/th/id/OIP.NzUMQOoyO30rW8h--nl_MgHaE6?pid=Api&P=0&h=180",
         "links": {
             "480p": "https://vcloud.lol/7c_qpx2e9c128e-",
             "720p": "https://vcloud.lol/8b6mp8gsbv84pnu",
@@ -319,15 +319,3 @@
         }
     }
 ]
-
-
-
-
-
-
-
-
-
-
-
-
