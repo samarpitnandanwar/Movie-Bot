@@ -23,7 +23,6 @@ def save_data(file, data):
         json.dump(data, f, indent=2)
 
 data = load_data("movies.json")
-ads_list = load_data("ads.json")
 
 # ====== Subscribers ======
 SUBSCRIBERS_FILE = "subscribers.json"
@@ -39,6 +38,16 @@ def find_item(name):
             return item
     return None
 
+def get_next_ad():
+    """Reload ads.json each time and cycle them in order"""
+    global ad_index
+    ads = load_data("ads.json")
+    if not ads:
+        return None
+    ad = ads[ad_index % len(ads)]
+    ad_index += 1
+    return ad
+
 # ====== Commands ======
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.message.from_user.id
@@ -51,7 +60,6 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     total_subs = len(subscribers)
 
-    # Funny/random messages
     funny_msgs = [
         "🍿 Grab some popcorn, you're in!",
         "😎 Cool beans! You made it!",
@@ -102,17 +110,15 @@ async def list_items(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(msg, parse_mode="Markdown")
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    global ad_index
     query = update.message.text.strip()
     item = find_item(query)
     if not item:
         await update.message.reply_text("❌ Not found. Try another name.")
         return
 
-    # ✅ Always display ad before result, in cycle order
-    if ads_list:
-        ad = ads_list[ad_index % len(ads_list)]
-        ad_index += 1
+    # ✅ Always display ad before result
+    ad = get_next_ad()
+    if ad:
         if ad["type"] == "text":
             await update.message.reply_text(ad["content"])
         elif ad["type"] == "image":
@@ -251,6 +257,8 @@ async def add_ads(update: Update, context: ContextTypes.DEFAULT_TYPE):
         parts = args.split("|")
         ad_type = parts[0].strip().lower()
 
+        ads_list = load_data("ads.json")
+
         if ad_type == "text":
             content = parts[1].strip()
             ads_list.append({"type": "text", "content": content})
@@ -281,6 +289,7 @@ async def remove_ads(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if update.message.from_user.id != ADMIN_ID:
         await update.message.reply_text("❌ Not authorized.")
         return
+    ads_list = load_data("ads.json")
     if not ads_list:
         await update.message.reply_text("⚠️ No ads to remove.")
         return
@@ -291,11 +300,13 @@ async def remove_ads(update: Update, context: ContextTypes.DEFAULT_TYPE):
         else:
             msg += f"{idx}. [Image] {ad['url']} - {ad.get('caption', '')}\n"
     msg += "\nReply with the number of the ad to remove."
+    context.user_data["ads_list"] = ads_list
     await update.message.reply_text(msg)
     return CONFIRM_REMOVE_AD
 
 async def confirm_remove_ad(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.message.text.strip()
+    ads_list = context.user_data.get("ads_list", [])
     try:
         idx = int(text) - 1
         if 0 <= idx < len(ads_list):
@@ -352,9 +363,10 @@ def main():
     app.add_handler(CommandHandler("addseries", addseries))
     app.add_handler(CommandHandler("updateitem", updateitem))
     app.add_handler(CommandHandler("add_ads", add_ads))
+    app.add_handler(CommandHandler("remove_ads", remove_ads))
     app.add_handler(CommandHandler("broadcast", broadcast))
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
     app.add_handler(CommandHandler("subscribers", show_subscribers))
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
     # Delete conversation
     conv_delete = ConversationHandler(
