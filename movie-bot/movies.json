@@ -250,35 +250,35 @@
         }
     },
         {
-            "name": "Gadar 2",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp12813078.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Bhediya",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp11699553.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Doctor G",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp12357856.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
+        "name": "Gadar 2",
+        "type": "movie",
+        "thumbnail": "https://rogmovies.org/wp-content/uploads/2023/08/Gadar2.jpg",
+        "links": {
+            "480p": "https://vcloud.lol/yulphyyxfihhatt",
+            "720p": "https://vcloud.lol/znyrlljr1munwzi",
+            "1080p": "https://vcloud.lol/fjzh1imc17jxjl1"
+        }
+    },
+    {
+        "name": "Bhediya",
+        "type": "movie",
+        "thumbnail": "https://rogmovies.org/wp-content/uploads/2022/11/Bhediya.jpg",
+        "links": {
+            "480p": "https://vcloud.lol/9gyznh_hbq_s1sz",
+            "720p": "https://vcloud.lol/vvj8--7af8tekje",
+            "1080p": "https://vcloud.lol/souzchuwzpuszpq"
+        }
+    },
+    {
+        "name": "Doctor G",
+        "type": "movie",
+        "thumbnail": "https://rogmovies.org/wp-content/uploads/2022/10/Doctor-G.jpg",
+        "links": {
+            "480p": "https://vcloud.lol/fqfplz1eejffoyj",
+            "720p": "https://vcloud.lol/aygya0iihtf4r4r",
+            "1080p": "https://vcloud.lol/q9_9o9dozqxpvet"
+        }
+    },
         {
             "name": "Ardhangini",
             "type": "movie",
@@ -1029,6 +1029,7 @@
         }
     }
 ]
+
 
 
 
