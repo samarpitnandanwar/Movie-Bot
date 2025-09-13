@@ -352,44 +352,6 @@ async def show_subscribers(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"📝 Subscriber IDs:\n{subs_list}"
     )
 
-async def addseries(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if update.message.from_user.id != ADMIN_ID:
-        await update.message.reply_text("❌ Not authorized.")
-        return
-    try:
-        args = " ".join(context.args)
-        parts = args.split("|")
-        name = parts[0].strip()
-        thumbnail = parts[1].strip()
-
-        # detect if it's season-based (contains Season)
-        if any("Season" in p for p in parts[2:]):
-            seasons = {}
-            for p in parts[2:]:
-                if "=" in p:
-                    season_name, link = p.split("=", 1)
-                    seasons[season_name.strip()] = link.strip()
-            new_item = {"name": name, "type": "series", "thumbnail": thumbnail, "seasons": seasons}
-        else:
-            episodes = {}
-            for p in parts[2:]:
-                if ":" in p:
-                    ep, qualities = p.split(":", 1)
-                    q_links = {q.strip(): l.strip() for ql in qualities.split(",") if "=" in ql for q, l in [ql.split("=",1)]}
-                    episodes[ep.strip()] = q_links
-            new_item = {"name": name, "type": "series", "thumbnail": thumbnail, "episodes": episodes}
-
-        data.append(new_item)
-        save_data("movies.json", data)
-        await update.message.reply_text(f"✅ Series *{name}* added!", parse_mode="Markdown")
-    except Exception as e:
-        await update.message.reply_text(
-            "⚠️ Usage:\n"
-            "/addseries Name | thumbnail | S01E01:480p=link,720p=link\n"
-            "OR\n"
-            "/addseries Name | thumbnail | Season 1=ziplink | Season 2=ziplink"
-        )
-
 
 # ====== Main ======
 def main():
@@ -428,3 +390,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
