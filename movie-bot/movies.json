@@ -1,254 +1,254 @@
 [
         {
-            "name": "Tanhaji: The Unsung Warrior",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp6023861.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Baaghi 3",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp6763874.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Street Dancer 3D",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp6909762.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Shubh Mangal Zyada Saavdhan",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp7409686.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Malang",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp6693860.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Chhapaak",
-            "type": "movie",
-            "thumbnail": "https://www.bollywoodhungama.com/wp-content/uploads/2020/01/Chhapaak-79-306x393.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Love Aaj Kal (2020)",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp5992594.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Angrezi Medium",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp5939299.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Shakuntala Devi",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp6608252.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Gulabo Sitabo",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp6875092.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Dil Bechara",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp6482529.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Lootcase",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp7421433.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Yaara",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp6468141.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Virgin Bhanupriya",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp6608220.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Jai Mummy Di",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp6792149.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Shershaah",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp9350557.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Sooryavanshi",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp10361498.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Gangubai Kathiawadi",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp11746389.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Mimi (2021)",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp11142079.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "BellBottom",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp11142259.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Bhool Bhulaiyaa 2",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp11699793.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Laal Singh Chaddha",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp11697661.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Jawan",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp11909474.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Pathaan",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp12245309.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
-        {
-            "name": "Animal",
-            "type": "movie",
-            "thumbnail": "https://wallpapercave.com/wp/wp12357163.jpg",
-            "links": {
-                "480p": "http://example.com/avatar-480p.mp4",
-                "720p": "http://example.com/avatar-720p.mp4",
-                "1080p": "http://example.com/avatar-1080p.mp4"
-            }
-        },
+        "name": "Tanhaji: The Unsung Warrior",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/TQKJo5ayDbhqY9boWaX6PuO9Jm1b07gSDOdZwCxYDnA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9taXIt/czMtY2RuLWNmLmJl/aGFuY2UubmV0L3By/b2plY3RzLzQwNC9i/ODhmZGYyMjU0MzQz/MjEuWTNKdmNDdzRN/RGdzTmpNeUxEQXNN/QS5wbmc",
+        "links": {
+            "480p": "https://vcloud.lol/4_1lz2ovus1gl__",
+            "720p": "https://vcloud.lol/xk60fuy66gf1767",
+            "1080p": "https://vcloud.lol/1g8mt4ai4iqihlq"
+        }
+    },
+    {
+        "name": "Baaghi 3",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/fgWx5zwc5sTW4Xdkx3cZQ4RHmwlYelYQxcrGsGpNIK8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9taXIt/czMtY2RuLWNmLmJl/aGFuY2UubmV0L3By/b2plY3RzLzQwNC9l/YjY3OGQ5NDExNDYy/Ny5ZM0p2Y0N3eU5U/QXdMREU1TlRVc01D/d3hNamsuanBn",
+        "links": {
+            "480p": "https://vcloud.lol/qf111h1s1fs8rq1",
+            "720p": "https://vcloud.lol/awxmtsr8rs9mw4t",
+            "1080p": "https://vcloud.lol/kfhkmsosslhum9x"
+        }
+    },
+    {
+        "name": "Street Dancer 3D",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/3faGKEFKbhscvRtZ6bxKJfO0kYrn69IH0eeNw6eBsfE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJhY2Nlc3Mu/Y29tL2Z1bGwvMjUy/NzQzOC5qcGc",
+        "links": {
+            "480p": "https://vcloud.lol/bqez1tt8qmyp6ub",
+            "720p": "https://vcloud.lol/23opvys80c-vmlu",
+            "1080p": "https://vcloud.lol/ucjusbxslmmuzkc"
+        }
+    },
+    {
+        "name": "Shubh Mangal Zyada Saavdhan",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/__o9FAQa7EHE7gsCw8b4u5F0KvLZXycm1mfX5sajadQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9nYXlz/aWZhbWlseS5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMjAv/MDIvc2h1YmgtbWFu/Z2FsLXp5YWRhLXNh/YXZkaGFuLXRyYWls/ZXItcmV2aWV3LWF5/dXNobWFubi1raHVy/cmFuYS1qaXRlbmRy/YS1rdW1hcnMtbG92/ZS1zdG9yeS1pcy1i/cmVha2luZy10aGUt/c3RlcmVvdHlwZXMt/YnV0LW5vdC1jb21w/bGV0ZWx5LTAwMS5q/cGc",
+        "links": {
+            "480p": "https://vcloud.lol/uihak3m7i2ak77v",
+            "720p": "https://vcloud.lol/6utf4met64qfmfc",
+            "1080p": "https://vcloud.lol/zffefujh3ortfou"
+        }
+    },
+    {
+        "name": "Malang",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/E8v6i75mR1VHWTN7hykJ4gQzGrPgHra3hPUC-bRapGM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJhY2Nlc3Mu/Y29tL2Z1bGwvMjY0/ODU3Mi5qcGc",
+        "links": {
+            "480p": "https://vcloud.lol/d5dnzdz9qmdzqzx",
+            "720p": "https://vcloud.lol/fey3yytrpyeyyyh",
+            "1080p": "https://vcloud.lol/1dp_a_d1hph02q6"
+        }
+    },
+    {
+        "name": "Chhapaak",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/t0qlO4LYwiqkfdrOgjgdzM6FA896A5ZQQFKaSMN9yqE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9leHRl/cm5hbC1wcmV2aWV3/LnJlZGQuaXQvdGhv/dWdodHMtb24tY2ho/YXBhYWstd2h5LWl0/LXdhcy1hLWNvbW1l/cmNpYWwtZmFpbHVy/ZS12MC1kM3B4YWpa/emJuTjFabmRrTWQz/ZHRrejNNckhxNmRR/dDJlckdDMnBQcUZV/OGh0QXBTV2JfTlZZ/OUo5Ym4ucG5nP3dp/ZHRoPTY0MCZjcm9w/PXNtYXJ0JmZvcm1h/dD1wanBnJmF1dG89/d2VicCZzPWYxNWMy/OWE2OWZkNzhhYmE1/Y2UxY2EyN2EyYjhl/NWM2ZTZhNTNiM2I",
+        "links": {
+            "480p": "https://vcloud.lol/7c7aq7nh1qcdj77",
+            "720p": "https://vcloud.lol/cahockx41ua3pkx",
+            "1080p": "https://vcloud.lol/mjmszksr2-f0jam"
+        }
+    },
+    {
+        "name": "Love Aaj Kal (2020)",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/wYAm3CtgkBLcyHX4_R3zKsrySfgjoiDadYikAV1fCwU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/dG9kYXktbWFya3Mt/MTUteWVhcnMtb2Yt/bG92ZS1hYWota2Fs/LXYwLTRob3d1eXg4/b3dmZDEuanBlZz93/aWR0aD02MTMmYXV0/bz13ZWJwJnM9N2Nj/NDFiZGExZGYzMjY3/MTUxNDhiNWExYTQx/NTJlMGRkNjg1ZTEx/Zg",
+        "links": {
+            "480p": "https://vcloud.lol/uu1x9szactn9cnf",
+            "720p": "https://vcloud.lol/lnrjfatx4snbwaf",
+            "1080p": "https://vcloud.lol/cc1nd0wac1nprci"
+        }
+    },
+    {
+        "name": "Angrezi Medium",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/lubzqRF1H-AJRWOCkhA8PKHK_sDjIE4SLyQqlKB4oEY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDcwOTkz/NjUuanBn",
+        "links": {
+            "480p": "https://vcloud.lol/ehesihkeglcft9q",
+            "720p": "https://vcloud.lol/nohvxpxvh1dhutx",
+            "1080p": "https://vcloud.lol/sgsl1lslgrsgtvc"
+        }
+    },
+    {
+        "name": "Shakuntala Devi",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/KJ8P_ukEeK-NYaXTL2V9K2ljkALZSSpmyS1bkG_W6Lw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/Ym9vbWxpdmUuaW4v/aC11cGxvYWQvMjAy/MC8wOS8wMy85Mjkx/NjYtc2hha3VudGFs/YS1kZXZpLW1vdmll/LndlYnA",
+        "links": {
+            "480p": "https://vcloud.lol/4jytscvimh-rjjy",
+            "720p": "https://vcloud.lol/dordiaymymbyldb",
+            "1080p": "https://vcloud.lol/cygxdzkcj0l5dg0"
+        }
+    },
+    {
+        "name": "Gulabo Sitabo",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/jIU4t10l78rKySDSxUpgAhZyEtVA-w9DlIYmxp_DDJo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jLm5k/dHZpbWcuY29tLzIw/MjAtMDYvOW5rMDhm/Mm9fYXl1c2htYW5u/LWluc3RhZ3JhbV82/MjV4MzAwXzEyX0p1/bmVfMjAuanBnP2Rv/d25zaXplPTc3Mzo0/MzU",
+        "links": {
+            "480p": "https://vcloud.lol/kyvyo1tcgu1l9rr",
+            "720p": "https://vcloud.lol/_fucel6k6tfffwn",
+            "1080p": "https://vcloud.lol/e61nfpwto19wf72"
+        }
+    },
+    {
+        "name": "Dil Bechara",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/RHUfBMFor0-RnVtTwK0E7YqnUlXu2JkSK1vogcPus3Y/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90YWxl/c250dW5lcy53b3Jk/cHJlc3MuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIwLzA3/L2RpbC1iZWNoYXJh/LXRyYWlsZXItMTAy/NHg1OTctMS5qcGc_/dz04NDA",
+        "links": {
+            "480p": "https://vcloud.lol/z263yuoqgw_mfdc",
+            "720p": "https://vcloud.lol/8h9pcbnwxauhpj7",
+            "1080p": "https://vcloud.lol/n0nynb99yqyi1oz"
+        }
+    },
+    {
+        "name": "Lootcase",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/DWJ4MScTguNc63oRBY89QVht7-qc67ldV9KVJgWxbaU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/OGtjeHY2d21tOXo4/MS5qcGc_d2lkdGg9/MTIwMCZmb3JtYXQ9/cGpwZyZhdXRvPXdl/YnAmcz1lNDQ3Mzcz/M2Q3OWQ1Zjg0NzRj/MmJiODJkYzg3YzI0/MTBkZDNjYjc1",
+        "links": {
+            "480p": "https://vcloud.lol/n6h2s066ocnpq6n",
+            "720p": "https://vcloud.lol/bi2bmbssf7y_agb",
+            "1080p": "https://vcloud.lol/inaajirs0rlry22"
+        }
+    },
+    {
+        "name": "Yaara",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/QbMZZ_XFzaXjsGnfR3lR5by5yWpVY7Wgeyq3czbxgJI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/anVzdC13YXRjaGVk/LXlhYXJhLXYwLWIz/Y2c3YzM1Z3gwZTEu/anBlZz9hdXRvPXdl/YnAmcz0xMzA3OWUz/ZmYzZGE0ZGY4NTgw/MjU4YWVmODI0YWUy/M2I2YTNiMmU4",
+        "links": {
+            "480p": "https://vcloud.lol/g6ztwzbegot7g65",
+            "720p": "https://vcloud.lol/1dyhfdirgju5auf",
+            "1080p": "https://vcloud.lol/s8zc82wywvuvw3r"
+        }
+    },
+    {
+        "name": "Virgin Bhanupriya",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/rH67-c8m6gDsBpKw_GQGinzy0_JkeUZhYyyyFgf27dA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudGltZXNub3du/ZXdzLmNvbS90aHVt/Yi9tc2lkLTE1MjYz/OTI0OSx1cGRhdGVk/YXQtMTc1NzA2Mjk1/MDc5OSx0aHVtYnNp/emUtOTU1NzQsd2lk/dGgtMjYwLGhlaWdo/dC00NjIscmVzaXpl/bW9kZS0zLzE1MjYz/OTI0OS5qcGc",
+        "links": {
+            "480p": "https://vcloud.lol/tpzjafj-yftptwp",
+            "720p": "https://vcloud.lol/q8bbgb_bqll0uzu",
+            "1080p": "https://vcloud.lol/jtrkdknrcdjoatr"
+        }
+    },
+    {
+        "name": "Jai Mummy Di",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/3NJnOQ6Nw8ASvJmeJqaTPB8tTurxHwNmz4oRaYfaRNM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9oaW5k/aS5maWxtaWJlYXQu/Y29tL2ZhbmltZy9t/b3ZpZS8xOTAyL2ph/aS1tdW1teS1kaS1w/aG90b3MtaW1hZ2Vz/LTc1Ny5qcGc",
+        "links": {
+            "480p": "https://vcloud.lol/6-jn3ji0usnufut",
+            "720p": "https://vcloud.lol/atppphttu1up1pz",
+            "1080p": "https://vcloud.lol/l1g1czezi1az1kx"
+        }
+    },
+    {
+        "name": "Shershaah",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/flpYdVSNeTZlkjMzgZ798u9sSXsafNSx_g4s77eQF94/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zbS5t/YXNoYWJsZS5jb20v/dC9tYXNoYWJsZV9p/bi9waG90by9kZWZh/dWx0L3NoZXJzaGFh/aC1yZXZpZXctY29w/eV8yYmd1LjEyNDgu/anBn",
+        "links": {
+            "480p": "https://vcloud.lol/lm2rcllp0vl2j1y",
+            "720p": "https://vcloud.lol/ezy0ad33uxuuhu3",
+            "1080p": "https://vcloud.lol/qursscbazk4cxvb"
+        }
+    },
+    {
+        "name": "Sooryavanshi",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/0RiPXL-gFVwJy8uEYZQsLCEoro915TLuApFdrhwpQoQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMubXViaWNkbi5u/ZXQvaW1hZ2VzL2Zp/bG0vMjU4ODY5L2Nh/Y2hlLTUxODgzMC0x/NTgzMTQwNTQ2L2lt/YWdlLXcxMjgwLmpw/Zz9zaXplPTgwMHg",
+        "links": {
+            "480p": "https://vcloud.lol/lev7k7mzdwzjmdj",
+            "720p": "https://vcloud.lol/-ioxiusis5-xusr",
+            "1080p": "https://vcloud.lol/lisquzqmfi76isl"
+        }
+    },
+    {
+        "name": "Gangubai Kathiawadi",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/DMNI9WrUFyL-aU-IHrEGNXTvlAVBeKX0GznsRGYqLYM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWNpbWcuYW1hcnVq/YWxhLmNvbS9hc3Nl/dHMvaW1hZ2VzLzIw/MjIvMDIvMDQvZ2Fu/Z3ViYWkta2F0aGlh/d2FkaV8xNjQzOTk0/MjIxLmpwZWc_cT04/MA",
+        "links": {
+            "480p": "https://vcloud.lol/5uljw9uv6ytc9hv",
+            "720p": "https://vcloud.lol/mj2_7mqnwgpm3tm",
+            "1080p": "https://vcloud.lol/2v5pb4rvekb54rf"
+        }
+    },
+    {
+        "name": "Mimi (2021)",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/17Xw6wS16wIs05jrBAFAcj4V9vJLlO20MgA5PEL3mjo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1QlpEQTVOek0y/TTJVdFlUbGhZeTAw/WlRoaExUZzRORGN0/T0Roak1ETmhaVFV6/WVdNelhrRXlYa0Zx/Y0dkZVFXUnZiMnhw/Ym1oay5fVjFfUUw3/NV9VWDUwMF9DUjAs/MCw1MDAsMjgxXy5q/cGc",
+        "links": {
+            "480p": "https://vcloud.lol/hnk145yxlx1173n",
+            "720p": "https://vcloud.lol/xmixzpbbcjwbbjt",
+            "1080p": "https://vcloud.lol/mkp9-u81gr4skp4"
+        }
+    },
+    {
+        "name": "BellBottom",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/XnJNZWycAicemUw6csursZysoQNaYkl_E4AoIuNW2co/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hbmFt/aWthbWlzaHJhLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/MS8wOS9iZWxsLWJv/dHRvbS5qcGc",
+        "links": {
+            "480p": "https://vcloud.lol/0jklpl2o0kx30lz",
+            "720p": "https://vcloud.lol/n5n7gnn5zgrp0zr",
+            "1080p": "https://vcloud.lol/8bwl6g6j4g8glqp"
+        }
+    },
+    {
+        "name": "Bhool Bhulaiyaa 2",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/-SqQn3NorXPBt-Uw7W_-V4p7hnTju1cWY7uDAjWNREU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDExMTI1/Nzk3LmpwZw",
+        "links": {
+            "480p": "https://vcloud.lol/6bs2rrvwsb6fjp6",
+            "720p": "https://vcloud.lol/vipmx0ieee2gnef",
+            "1080p": "https://vcloud.lol/g4zxv05ii41pjsv"
+        }
+    },
+    {
+        "name": "Laal Singh Chaddha",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/Gl4RsFB2OBCiW5UbETPRJmiXFaanDQ1JzbIBoh2kd2k/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9waWMu/YnN0YXJzdGF0aWMu/Y29tL3VnYy8zOTI4/OWZjMDExMmZmZWY4/ODE2MDIwOWNlY2Jh/ZDZiMC5qcGdAMzIw/d18xODBoXzFlXzFj/XzkwcQ",
+        "links": {
+            "480p": "https://vcloud.lol/u7wr1uuyxvwmdm7",
+            "720p": "https://vcloud.lol/ucrfququcdcu4cm",
+            "1080p": "https://vcloud.lol/so86lxtemlsxtop"
+        }
+    },
+    {
+        "name": "Jawan",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/EOyRFw9CgHldQ570OUkN2nouU36TkJ1KPcxfd3wrouc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9waWMu/YnN0YXJzdGF0aWMu/Y29tL3VnYy81YjVj/YjQ1OGVhMWM3Nzc1/ODBkNDFkNTUwNjU2/NjFkMS5qcGdAMzIw/d18xODBoXzFlXzFj/XzkwcQ",
+        "links": {
+            "480p": "https://vcloud.lol/yqqqaracb9pz9ur",
+            "720p": "https://vcloud.lol/-befozm9cwslclc",
+            "1080p": "https://vcloud.lol/yowwwht0v0fbur7"
+        }
+    },
+    {
+        "name": "Pathaan",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/iJwv6TSudGPAZOjbd325WgBXds5HidYJPC03aQExcpk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuanVzdHdhdGNo/LmNvbS9iYWNrZHJv/cC8zMDE4Nzc3NjUv/czY0MC9wYXRoYWFu",
+        "links": {
+            "480p": "https://vcloud.lol/i6on1nmoe1n1i1s",
+            "720p": "https://vcloud.lol/hpnkn4em4-tedi9",
+            "1080p": "https://vcloud.lol/xgwomnnxtfbao1y"
+        }
+    },
+    {
+        "name": "Animal",
+        "type": "movie",
+        "thumbnail": "https://imgs.search.brave.com/7Ujifchz9lK94TeamQrHNtv7Qbb9yAxfLk-UIpzmQlw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2JjL2Zl/LzQ3L2JjZmU0N2I0/YjJmYmNiMWRkNDBj/ZWY0NDU2OWQ2ZDgx/LmpwZw",
+        "links": {
+            "480p": "https://vcloud.lol/ge46odyradfwydm",
+            "720p": "https://vcloud.lol/y71p9l9bveyui1a",
+            "1080p": "https://vcloud.lol/ahle7tvppyl8qa6"
+        }
+    },
         {
             "name": "Gadar 2",
             "type": "movie",
@@ -1029,6 +1029,7 @@
         }
     }
 ]
+
 
 
 
