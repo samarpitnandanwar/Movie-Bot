@@ -25,6 +25,10 @@ def save_data(file, data):
 data = load_data("movies.json")
 ads_list = load_data("ads.json")
 
+# ====== Subscribers ======
+SUBSCRIBERS_FILE = "subscribers.json"
+subscribers = set(load_data(SUBSCRIBERS_FILE))  # store as set for uniqueness
+
 # ====== Utility functions ======
 def find_item(name):
     for item in data:
@@ -34,14 +38,42 @@ def find_item(name):
 
 # ====== Commands ======
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user_id = update.message.from_user.id
+    new_subscriber = False
+
+    if user_id not in subscribers:
+        subscribers.add(user_id)
+        save_data(SUBSCRIBERS_FILE, list(subscribers))
+        new_subscriber = True
+
+    total_subs = len(subscribers)
+
+    # Funny/random messages
+    funny_msgs = [
+        "🍿 Grab some popcorn, you're in!",
+        "😎 Cool beans! You made it!",
+        "🎉 Party time! You're officially awesome!",
+        "🛸 Welcome aboard, space traveler!",
+        "🐱‍👤 Ninja vibes activated! Welcome!",
+        "💃 Shake it off! You're a star subscriber!",
+        "🥳 Hooray! Another legend joins the club!"
+    ]
+    
+    if new_subscriber:
+        sub_msg = f"🎊 Hahaha! You're subscriber number *{total_subs}* 🤣\n" \
+                  f"{random.choice(funny_msgs)}"
+    else:
+        sub_msg = f"👋 Welcome back! You're already part of our *{total_subs}* subscribers community 😄"
+
     await update.message.reply_text(
-        "🎬 Welcome!\n\n"
-        "Send me a *movie/series/anime* name to get links.\n\n"
+        f"{sub_msg}\n\n"
+        "🎬 Send me a *movie/series/anime* name to get links.\n\n"
         "👉 Admin commands:\n"
         "   /addmovie, /addseries, /updateitem, /deleteitem\n"
-        "   /add_ads, /remove_ads\n"
+        "   /add_ads, /remove_ads, /broadcast\n"
         "👉 User command:\n"
-        "   /list (see all available movies & series)"
+        "   /list (see all available movies & series)",
+        parse_mode="Markdown"
     )
 
 async def list_items(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -271,17 +303,36 @@ async def confirm_remove_ad(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("❌ Please enter a valid number.")
     return ConversationHandler.END
 
+# ====== Broadcast (admin only) ======
+async def broadcast(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if update.message.from_user.id != ADMIN_ID:
+        await update.message.reply_text("❌ Not authorized.")
+        return
+    try:
+        message = " ".join(context.args)
+        count = 0
+        for user_id in subscribers:
+            try:
+                await context.bot.send_message(chat_id=user_id, text=message)
+                count += 1
+            except:
+                pass
+        await update.message.reply_text(f"✅ Broadcast sent to {count} subscribers.")
+    except:
+        await update.message.reply_text("⚠️ Usage: /broadcast Your message here")
+
 # ====== Main ======
 def main():
     app = Application.builder().token(TOKEN).build()
 
     # Command handlers
     app.add_handler(CommandHandler("start", start))
-    app.add_handler(CommandHandler("list", list_items))   # 👈 NEW
+    app.add_handler(CommandHandler("list", list_items))
     app.add_handler(CommandHandler("addmovie", addmovie))
     app.add_handler(CommandHandler("addseries", addseries))
     app.add_handler(CommandHandler("updateitem", updateitem))
     app.add_handler(CommandHandler("add_ads", add_ads))
+    app.add_handler(CommandHandler("broadcast", broadcast))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
     # Delete conversation
