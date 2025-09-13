@@ -280,6 +280,16 @@
         }
     },
     {
+        "name": "Saiyaara 2025",
+        "type": "movie",
+        "thumbnail": "https://rogmovies.org/wp-content/uploads/2025/07/Saiyaara.jpg",
+        "links": {
+            "480p": "https://vcloud.lol/7c_qpx2e9c128e-",
+            "720p": "https://vcloud.lol/8b6mp8gsbv84pnu",
+            "1080p": "https://vcloud.lol/rapu0uqpssymqts"
+        }
+    },
+    {
         "name": "Stranger Things",
         "type": "webseries",
         "thumbnail": "https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/04/stranger-things-cartoon.jpg",
@@ -309,6 +319,7 @@
         }
     }
 ]
+
 
 
 
