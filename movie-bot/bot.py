@@ -26,7 +26,7 @@ data = load_data("movies.json")
 
 # ====== Subscribers ======
 SUBSCRIBERS_FILE = "subscribers.json"
-subscribers = set(load_data(SUBSCRIBERS_FILE))  # store as set for uniqueness
+subscribers = set(load_data(SUBSCRIBERS_FILE))
 
 # ====== Ad rotation index ======
 ad_index = 0
@@ -71,24 +71,18 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ]
     
     if new_subscriber:
-        sub_msg = f"🎊 Hahaha! You're subscriber number *{total_subs}* 🤣\n" \
-                  f"{random.choice(funny_msgs)}"
+        sub_msg = f"🎊 You're subscriber number *{total_subs}* 🎉\n{random.choice(funny_msgs)}"
     else:
-        sub_msg = f"👋 Welcome back! You're already part of our *{total_subs}* subscribers community 😄"
+        sub_msg = f"👋 Welcome back! You're part of our *{total_subs}* subscribers community 😄"
 
-    # 🎯 User menu buttons
-    keyboard = [
-        [InlineKeyboardButton("📋 Show Library", callback_data="list")]
-    ]
+    keyboard = [[InlineKeyboardButton("📋 Show Library", callback_data="list")]]
     if user_id == ADMIN_ID:
         keyboard.append([InlineKeyboardButton("⚙️ Admin Panel", callback_data="admin")])
-
-    reply_markup = InlineKeyboardMarkup(keyboard)
 
     await update.message.reply_text(
         f"{sub_msg}\n\n🎬 Send me a *movie/series/anime* name to get links.",
         parse_mode="Markdown",
-        reply_markup=reply_markup
+        reply_markup=InlineKeyboardMarkup(keyboard)
     )
 
 async def list_items(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -113,28 +107,141 @@ async def list_items(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_text(msg, parse_mode="Markdown")
 
-# ====== Admin Menu ======
-async def admin(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    user_id = update.message.from_user.id
-    if user_id != ADMIN_ID:
-        await update.message.reply_text("❌ Not authorized.")
-        return
+# ====== Admin Functions ======
+async def addmovie(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if update.message.from_user.id != ADMIN_ID:
+        return await update.message.reply_text("❌ Not authorized.")
 
-    keyboard = [
-        [InlineKeyboardButton("🎥 Add Movie", callback_data="addmovie")],
-        [InlineKeyboardButton("📺 Add Series", callback_data="addseries")],
-        [InlineKeyboardButton("✏️ Update Item", callback_data="updateitem")],
-        [InlineKeyboardButton("🗑️ Delete Item", callback_data="deleteitem")],
-        [InlineKeyboardButton("➕ Add Ad", callback_data="add_ads")],
-        [InlineKeyboardButton("➖ Remove Ad", callback_data="remove_ads")],
-        [InlineKeyboardButton("👥 Subscribers", callback_data="subscribers")],
-        [InlineKeyboardButton("📢 Broadcast", callback_data="broadcast")]
-    ]
-    reply_markup = InlineKeyboardMarkup(keyboard)
+    try:
+        text = update.message.text.replace("/addmovie ", "")
+        name, thumb, *links = [p.strip() for p in text.split("|")]
+        qualities = {l.split("=")[0]: l.split("=")[1] for l in links}
 
-    await update.message.reply_text("⚙️ *Admin Panel* – Choose an action:", parse_mode="Markdown", reply_markup=reply_markup)
+        data.append({"type": "movie", "name": name, "thumbnail": thumb, "links": qualities})
+        save_data("movies.json", data)
+        await update.message.reply_text(f"✅ Movie *{name}* added!", parse_mode="Markdown")
+    except Exception as e:
+        await update.message.reply_text(f"⚠️ Error: {e}\nUsage:\n`/addmovie Name | thumb | 480p=link | 720p=link`", parse_mode="Markdown")
 
-# ====== Handle button clicks ======
+async def addseries(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if update.message.from_user.id != ADMIN_ID:
+        return await update.message.reply_text("❌ Not authorized.")
+
+    try:
+        text = update.message.text.replace("/addseries ", "")
+        name, thumb, *episodes = [p.strip() for p in text.split("|")]
+        episodes_dict = {}
+        for ep in episodes:
+            ep_name, links_str = ep.split(":")
+            links = {l.split("=")[0]: l.split("=")[1] for l in links_str.split(",")}
+            episodes_dict[ep_name] = links
+
+        data.append({"type": "series", "name": name, "thumbnail": thumb, "episodes": episodes_dict})
+        save_data("movies.json", data)
+        await update.message.reply_text(f"✅ Series *{name}* added!", parse_mode="Markdown")
+    except Exception as e:
+        await update.message.reply_text(f"⚠️ Error: {e}\nUsage:\n`/addseries Name | thumb | S01E01:480p=link,720p=link`", parse_mode="Markdown")
+
+async def updateitem(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if update.message.from_user.id != ADMIN_ID:
+        return await update.message.reply_text("❌ Not authorized.")
+    await update.message.reply_text("⚠️ Update logic here (similar to add).")
+
+async def deleteitem(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if update.message.from_user.id != ADMIN_ID:
+        return await update.message.reply_text("❌ Not authorized.")
+    await update.message.reply_text("⚠️ Delete logic here.")
+
+async def add_ads(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if update.message.from_user.id != ADMIN_ID:
+        return await update.message.reply_text("❌ Not authorized.")
+
+    try:
+        text = update.message.text.replace("/add_ads ", "")
+        parts = [p.strip() for p in text.split("|")]
+
+        ads = load_data("ads.json")
+        if parts[0] == "text":
+            ads.append({"type": "text", "content": parts[1]})
+        elif parts[0] == "image":
+            ads.append({"type": "image", "url": parts[1], "caption": parts[2]})
+
+        save_data("ads.json", ads)
+        await update.message.reply_text("✅ Ad added!")
+    except Exception as e:
+        await update.message.reply_text(f"⚠️ Error: {e}")
+
+async def remove_ads(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if update.message.from_user.id != ADMIN_ID:
+        return await update.message.reply_text("❌ Not authorized.")
+    save_data("ads.json", [])
+    await update.message.reply_text("✅ All ads removed!")
+
+async def broadcast(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if update.message.from_user.id != ADMIN_ID:
+        return await update.message.reply_text("❌ Not authorized.")
+    msg = update.message.text.replace("/broadcast ", "")
+    for uid in subscribers:
+        try:
+            await context.bot.send_message(chat_id=uid, text=msg)
+        except:
+            pass
+    await update.message.reply_text("✅ Broadcast sent!")
+
+async def show_subscribers(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(f"👥 Total subscribers: {len(subscribers)}")
+
+# ====== Handle Search ======
+async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.message.text.strip()
+    item = find_item(query)
+
+    if not item:
+        return await update.message.reply_text("❌ Not found.")
+
+    if item["type"] == "movie":
+        msg = f"🎥 *{item['name']}*\n"
+        for q, link in item["links"].items():
+            msg += f"🔗 {q}: {link}\n"
+        await update.message.reply_photo(item["thumbnail"], caption=msg, parse_mode="Markdown")
+    else:
+        msg = f"📺 *{item['name']}*\n"
+        for ep, links in item["episodes"].items():
+            msg += f"\n▶️ {ep}\n"
+            for q, link in links.items():
+                msg += f"   {q}: {link}\n"
+        await update.message.reply_photo(item["thumbnail"], caption=msg, parse_mode="Markdown")
+
+    # Show ad after search
+    ad = get_next_ad()
+    if ad:
+        if ad["type"] == "text":
+            await update.message.reply_text(f"📢 {ad['content']}")
+        elif ad["type"] == "image":
+            await update.message.reply_photo(photo=ad["url"], caption=f"📢 {ad['caption']}")
+
+# ====== Main ======
+def main():
+    app = Application.builder().token(TOKEN).build()
+
+    app.add_handler(CommandHandler("start", start))
+    app.add_handler(CommandHandler("list", list_items))
+    app.add_handler(CommandHandler("admin", admin))
+    app.add_handler(CommandHandler("addmovie", addmovie))
+    app.add_handler(CommandHandler("addseries", addseries))
+    app.add_handler(CommandHandler("updateitem", updateitem))
+    app.add_handler(CommandHandler("deleteitem", deleteitem))
+    app.add_handler(CommandHandler("add_ads", add_ads))
+    app.add_handler(CommandHandler("remove_ads", remove_ads))
+    app.add_handler(CommandHandler("broadcast", broadcast))
+    app.add_handler(CommandHandler("subscribers", show_subscribers))
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
+    app.add_handler(CallbackQueryHandler(button_handler))
+
+    print("🤖 Bot is running...")
+    app.run_polling()
+
+# ====== Button handler ======
 async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
@@ -145,62 +252,21 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif cmd == "admin":
         await admin(update, context)
     elif cmd == "addmovie":
-        await query.edit_message_text("ℹ️ Use manually:\n`/addmovie Name | thumbnail | 480p=link | 720p=link`", parse_mode="Markdown")
+        await query.edit_message_text("ℹ️ Use `/addmovie Name | thumb | 480p=link | 720p=link`")
     elif cmd == "addseries":
-        await query.edit_message_text("ℹ️ Use manually:\n`/addseries Name | thumbnail | S01E01:480p=link,720p=link`", parse_mode="Markdown")
+        await query.edit_message_text("ℹ️ Use `/addseries Name | thumb | S01E01:480p=link,720p=link`")
     elif cmd == "updateitem":
-        await query.edit_message_text("ℹ️ Use manually:\n`/updateitem Name | thumbnail | 480p=newlink`", parse_mode="Markdown")
+        await query.edit_message_text("ℹ️ Use `/updateitem Name | thumb | 480p=newlink`")
     elif cmd == "deleteitem":
-        await query.edit_message_text("ℹ️ Use manually:\n`/deleteitem Name`", parse_mode="Markdown")
+        await query.edit_message_text("ℹ️ Use `/deleteitem Name`")
     elif cmd == "add_ads":
-        await query.edit_message_text("ℹ️ Use manually:\n`/add_ads text | msg` or `/add_ads image | url | caption`", parse_mode="Markdown")
+        await query.edit_message_text("ℹ️ Use `/add_ads text | msg` or `/add_ads image | url | caption`")
     elif cmd == "remove_ads":
-        await query.edit_message_text("ℹ️ Use manually:\n`/remove_ads`", parse_mode="Markdown")
+        await query.edit_message_text("ℹ️ Use `/remove_ads`")
     elif cmd == "subscribers":
         await show_subscribers(update, context)
     elif cmd == "broadcast":
-        await query.edit_message_text("ℹ️ Use manually:\n`/broadcast Your message`", parse_mode="Markdown")
-
-# (keep your handle_message, addmovie, addseries, updateitem, deleteitem, ads functions, broadcast, etc. EXACTLY the same as before)
-
-# ====== Main ======
-def main():
-    app = Application.builder().token(TOKEN).build()
-
-    # Command handlers
-    app.add_handler(CommandHandler("start", start))
-    app.add_handler(CommandHandler("list", list_items))
-    app.add_handler(CommandHandler("admin", admin))
-    app.add_handler(CommandHandler("addmovie", addmovie))
-    app.add_handler(CommandHandler("addseries", addseries))
-    app.add_handler(CommandHandler("updateitem", updateitem))
-    app.add_handler(CommandHandler("add_ads", add_ads))
-    app.add_handler(CommandHandler("remove_ads", remove_ads))
-    app.add_handler(CommandHandler("broadcast", broadcast))
-    app.add_handler(CommandHandler("subscribers", show_subscribers))
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
-
-    # Delete conversation
-    conv_delete = ConversationHandler(
-        entry_points=[CommandHandler("deleteitem", deleteitem)],
-        states={CONFIRM_DELETE: [MessageHandler(filters.TEXT & ~filters.COMMAND, confirm_delete)]},
-        fallbacks=[]
-    )
-    app.add_handler(conv_delete)
-
-    # Remove ad conversation
-    conv_remove_ads = ConversationHandler(
-        entry_points=[CommandHandler("remove_ads", remove_ads)],
-        states={CONFIRM_REMOVE_AD: [MessageHandler(filters.TEXT & ~filters.COMMAND, confirm_remove_ad)]},
-        fallbacks=[]
-    )
-    app.add_handler(conv_remove_ads)
-
-    # Button handler
-    app.add_handler(CallbackQueryHandler(button_handler))
-
-    print("🤖 Bot is running...")
-    app.run_polling()
+        await query.edit_message_text("ℹ️ Use `/broadcast Your message`")
 
 if __name__ == "__main__":
     main()
