@@ -290,6 +290,16 @@
         }
     },
     {
+        "name": "Heer Express HDTC",
+        "type": "movie",
+        "thumbnail": "https://rogmovies.org/wp-content/uploads/2025/09/Heer-Express.jpg",
+        "links": {
+            "480p": "https://vcloud.lol/boerohbqehxrubu",
+            "720p": "https://vcloud.lol/dnino-ptsdpilp1",
+            "1080p": "https://vcloud.lol/lpw85bxlpp5pply"
+        }
+    },
+    {
         "name": "Demon Slayer: Kimetsu no Yaiba",
         "type": "anime",
         "thumbnail": "https://example.com/stranger.jpg",
@@ -309,5 +319,6 @@
         }
     }
 ]
+
 
 
